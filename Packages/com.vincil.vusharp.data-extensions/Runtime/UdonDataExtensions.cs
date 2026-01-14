@@ -5,6 +5,31 @@ namespace Vincil.VUSharp.Extensions
 {
     public static class UdonDataExtensions
     {
+        public static DataToken PullOutLastElement(this DataList dataList)
+        {
+            if(dataList == null || dataList.Count == 0)
+            {
+                Debug.LogError("[UdonDataExtensions] DataList is null or empty, cannot pull out last element!");
+                return new DataToken();
+            }
+            int lastIndex = dataList.Count - 1;
+            DataToken lastElement = dataList[lastIndex];
+            dataList.RemoveAt(lastIndex);
+            return lastElement;
+        }
+
+        public static DataToken PullOutFirstElement(this DataList dataList)
+        {
+            if (dataList == null || dataList.Count == 0)
+            {
+                Debug.LogError("[UdonDataExtensions] DataList is null or empty, cannot pull out last element!");
+                return new DataToken();
+            }
+            DataToken firstElement = dataList[0];
+            dataList.RemoveAt(0);
+            return firstElement;
+        }
+
         /// <summary>
         /// Adds the elements of the specified <see cref="DataList"/> to the <see cref="DataList"/> associated with the
         /// given key in the <see cref="DataDictionary"/>.

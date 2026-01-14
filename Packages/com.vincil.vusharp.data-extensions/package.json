@@ -1,6 +1,6 @@
 {
   "name": "com.vincil.vusharp.data-extensions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "VUSharp Data Extensions",
   "description": "Extensions for Udon Data Classes",
   "unity": "2022.3",
